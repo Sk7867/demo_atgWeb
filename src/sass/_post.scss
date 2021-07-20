@@ -1,0 +1,295 @@
+.post_container {
+  width: clamp(300px, 95%, 692px);
+  box-shadow: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.12);
+  margin: 0 auto 8px;
+  padding-bottom: 18px;
+
+  .post_wrapper {
+    width: 100%;
+    margin: 18px auto 20px;
+    padding-left: 8px;
+
+    .post_header_img {
+      width: clamp(280px, 95%, 690px);
+      height: 100%;
+      margin: 0 auto 14px;
+
+      img {
+        border-radius: 4px 4px 0 0;
+        width: 100%;
+      }
+
+      .img_small {
+        display: block;
+
+        @include mq(tablet) {
+          display: none;
+        }
+      }
+      .img_big {
+        display: none;
+
+        @include mq(tablet) {
+          display: block;
+        }
+      }
+    }
+
+    .post_type {
+      @include box(100%, 20px);
+      font-family: $main-font;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: $header15;
+    }
+
+    .head_more {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      margin-top: 6px;
+      @include box(100%);
+      position: relative;
+
+      .post_heading {
+        @include box(280px, 63px);
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21px;
+        color: $header10;
+        background-color: $header1;
+      }
+
+      .dot_icon {
+        margin-right: 2px;
+        cursor: pointer;
+        margin-left: 12px;
+        outline: none;
+
+        &:focus {
+          background-color: hsla(210, 1%, 75%, 1);
+        }
+      }
+      div[role='menu'] {
+        display: none;
+      }
+
+      div[role='menu'].visible {
+        position: absolute;
+        top: 48px;
+        right: 6px;
+        width: 160px;
+        height: 102px;
+        background-color: $header1;
+        box-shadow: 0px 0px 2px 0px hsla(0, 0%, 0%, 0.08);
+        box-shadow: 0px 2px 8px 0px hsla(0, 0%, 0%, 0.16);
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        border-radius: 4px;
+
+        a {
+          cursor: pointer;
+          padding: 7px 0px 7px 12px;
+          height: 32px;
+          font-family: $main-font;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+          color: $header15;
+        }
+      }
+    }
+
+    .post_summary {
+      font-family: $main-font;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: $header8;
+      margin-bottom: 20px;
+    }
+
+    .status_time_location {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+      font-family: $main-font;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: -0.01em;
+      color: $header10;
+
+      @include mq(phablet) {
+        width: 78%;
+        font-size: 13.5px;
+        line-height: 17.5px;
+      }
+
+      @include mq(desk-small) {
+        font-size: 15px;
+        line-height: 19px;
+      }
+
+      .time,
+      .status {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        & svg {
+          margin-right: 5px;
+        }
+      }
+
+      .location {
+        margin-right: 20px;
+      }
+    }
+
+    .optional_btn {
+      margin-top: 20px;
+      margin-bottom: 30px;
+
+      button {
+        width: clamp(280px, 95%, 652px);
+        height: 34px;
+        background-color: $header14;
+        border-radius: 8px;
+        border: 0.7px solid hsla(220, 10%, 69%, 1);
+        font-family: $main-font;
+        font-weight: 600;
+        font-size: 13px;
+        text-align: center;
+        line-height: 140%;
+      }
+
+      .visit_web {
+        color: hsla(15, 77%, 55%, 1);
+      }
+      .apply_time {
+        color: hsla(158, 98%, 36%, 1);
+      }
+    }
+
+    .user {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+
+      &_info {
+        display: flex;
+        align-items: center;
+
+        @include mq(tablet) {
+          width: 100%;
+        }
+
+        .user_pic {
+          margin-right: 12px;
+        }
+
+        .name_views {
+          @include mq(tablet) {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            width: 100%;
+          }
+          .user_name {
+            font-family: $main-font;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 17px;
+            color: $header10;
+          }
+
+          .user_views {
+            font-family: $main-font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $header8;
+
+            @include mq(tablet) {
+              margin-right: 20px;
+            }
+            @include mq(desk-small) {
+              margin-right: 30px;
+            }
+            @include mq(desktop) {
+              margin-right: 40px;
+            }
+          }
+        }
+      }
+      .share_btn {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        @include box(75px, 26px);
+        background-color: $header2;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-right: 18px;
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $header10;
+
+        @include mq(tablet) {
+          width: 42px;
+          height: 36px;
+          overflow: hidden;
+          justify-content: flex-start;
+        }
+
+        .share_icon {
+          margin-right: 6px;
+
+          @include mq(tablet) {
+            margin-left: 8px;
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  &:nth-child(-n + 2) {
+    .post_wrapper {
+      .status_time_location,
+      .optional_btn {
+        display: none;
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    .post_wrapper {
+      .status_time_location {
+        .status {
+          display: none;
+        }
+      }
+    }
+  }
+  &:nth-child(4) {
+    .post_wrapper {
+      .post_header_img {
+        display: none;
+      }
+    }
+  }
+}

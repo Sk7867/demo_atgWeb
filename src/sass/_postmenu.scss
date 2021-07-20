@@ -1,0 +1,153 @@
+.post_menu {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background: hsla(0, 0%, 100%, 1);
+
+  @include mq(tablet) {
+    justify-content: flex-start;
+    gap: 20px;
+    border-bottom: 1px solid hsla(0, 0%, 88%, 1);
+    padding-bottom: 20px;
+    padding-left: 20px;
+    position: sticky;
+    top: 84px;
+    z-index: 5;
+  }
+
+  &_item {
+    font-family: $main-font;
+    color: $header10;
+    cursor: pointer;
+
+    &:first-child {
+      @include box(calcRem(73px), calcRem(18px));
+      font-weight: 700;
+      font-size: 1.167rem;
+      //   margin-top: 22px;
+      margin-left: 16px;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+
+      @include mq(tablet) {
+        display: none;
+      }
+    }
+
+    &:not(:first-child) {
+      display: none;
+
+      @include mq(tablet) {
+        color: $header15;
+        display: block;
+        font-weight: 400;
+        line-height: 18px;
+        font-size: 1.167rem;
+      }
+
+      @include mq(desk-small) {
+        font-size: 1.333rem;
+        line-height: 21px;
+      }
+    }
+
+    &:nth-child(n + 3) {
+      color: $header11;
+    }
+  }
+  &_btns {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include mq(tablet) {
+      flex: 6;
+    }
+
+    .filter {
+      @include box(100%, calcRem(32px));
+      background-color: $header2;
+      border-radius: 4px;
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      margin-right: 18px;
+      margin-top: 14px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+
+      @include mq(tablet) {
+        display: none;
+      }
+
+      & p {
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 1.086rem;
+        line-height: 17px;
+        color: $header10;
+        @include box(calcRem(55px), calcRem(17px));
+        margin-right: 16px;
+        margin-left: 10px;
+      }
+    }
+
+    .write_post,
+    button {
+      display: none;
+
+      @include mq(tablet) {
+        display: flex;
+      }
+    }
+
+    .write_post {
+      @include box(calcRem(113px), calcRem(36px));
+      font-family: $main-font;
+      background-color: $header16;
+      font-weight: 500;
+      border-radius: 4px;
+      line-height: 19px;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      margin-right: 12px;
+      font-size: calcRem(13px);
+      cursor: pointer;
+
+      p {
+        margin-right: 14px;
+        margin-left: 10px;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      text-align: center;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      margin-right: 5px;
+      @include box(calcRem(100px), calcRem(36px));
+    }
+    .join_btn {
+      background-color: $primary6;
+      color: $header14;
+
+      @include mq(desk-small) {
+        margin-right: 20px;
+      }
+
+      .join_icon {
+        margin-right: 6px;
+      }
+    }
+  }
+}

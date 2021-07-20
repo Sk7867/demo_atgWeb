@@ -1,0 +1,59 @@
+.sidebar_wrapper {
+  margin-top: 35px;
+
+  .location_input {
+    position: relative;
+    width: 245px;
+    height: 30px;
+    padding-bottom: 10px;
+    border-bottom: 0.4px solid hsla(0, 0%, 72%, 1);
+
+    input[type='text'] {
+      @include box(100%);
+      border: none;
+      outline: none;
+      padding-left: 25px;
+      font-family: $main-font;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: $header15;
+    }
+
+    .location_icon {
+      position: absolute;
+      left: 0;
+    }
+
+    .write_loc_icon {
+      position: absolute;
+      right: 5px;
+    }
+  }
+
+  .disclaimer {
+    display: flex;
+    margin-top: 30px;
+    width: 245px;
+
+    .error_icon {
+      @include box(16px);
+      opacity: 0.5;
+      margin-right: 8px;
+    }
+
+    .text {
+      font-family: $main-font;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: $header15;
+      opacity: 0.5;
+      @include box(220px, 32px);
+    }
+  }
+
+  .groups_recommends {
+    margin-top: 50px;
+  }
+}

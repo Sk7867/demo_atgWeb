@@ -1,0 +1,165 @@
+header {
+  height: calcRem(25px);
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.12);
+  background: hsla(0, 0%, 100%, 1);
+
+  @include mq(tablet, min) {
+    height: calcRem(72px);
+    justify-content: space-between;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+  }
+
+  .header_left {
+    flex: 3;
+
+    .logo_img {
+      display: none;
+
+      @include mq(tablet, min) {
+        display: block;
+        height: 24px;
+        width: 156px;
+        margin: 24px 0;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      @include mq(desk-small) {
+        width: 162px;
+        margin-left: 72px;
+      }
+    }
+  }
+
+  .header_center {
+    flex: 5;
+    margin-left: 5px;
+
+    @include mq(desk-small) {
+      margin-left: 105px;
+    }
+
+    .searchbar {
+      display: none;
+
+      @include mq(tablet, min) {
+        display: flex;
+        align-items: center;
+        @include box(330px, 42px);
+        background-color: $header14;
+        border-radius: 20px;
+      }
+
+      @include mq(desk-small) {
+        width: 360px;
+      }
+
+      .search_icon {
+        margin: 10px 12px;
+        color: $header11;
+      }
+
+      .search_input {
+        border: none;
+        width: 75%;
+        outline: none;
+        background-color: $header14;
+        font-family: $main-font;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 18.2px;
+        color: $header12;
+
+        .search_input:focus {
+          outline: none;
+        }
+
+        @include mq(desk-small) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .header_right {
+    flex: 4;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    .misc_icons {
+      display: flex;
+      gap: 9px;
+      // margin-right: 12px;
+      @include box(calcRem(0px), calcRem(10px));
+
+      .square {
+        @include box(10px, 100%);
+        color: $header7;
+      }
+
+      .circle {
+        @extend .square;
+      }
+
+      .invert_tri {
+        @extend .circle;
+        margin-right: 12px;
+      }
+
+      @include mq(tablet, min) {
+        display: none;
+      }
+    }
+
+    .create_drop {
+      display: none;
+
+      @include mq(tablet, min) {
+        display: flex;
+        align-items: center;
+      }
+
+      @include mq(desk-small) {
+        margin-left: 72px;
+      }
+
+      .create_text {
+        font-family: $main-font;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 20.8px;
+        text-align: right;
+        color: $header10;
+
+        .free {
+          font-weight: 700;
+          color: $primary6;
+        }
+      }
+
+      .logged_in {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        .logged_name {
+          margin-left: 12px;
+          font-family: $main-font;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18.2px;
+          color: $header15;
+        }
+      }
+    }
+  }
+}

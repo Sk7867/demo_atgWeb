@@ -1,0 +1,388 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  @include mq(tablet) {
+    align-items: center;
+  }
+}
+
+.popup_container {
+  position: relative;
+  min-width: 310px;
+  width: 360px;
+  background-color: #fff;
+  height: 462px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 8px 25px 0 hsla(0, 0, 0, 25);
+  z-index: 110;
+
+  @include mq(tablet) {
+    width: 736px;
+    height: 513px;
+  }
+
+  .tagline {
+    display: none;
+
+    @include mq(tablet) {
+      display: block;
+      width: 100%;
+      height: 50px;
+      background-color: $primary20;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p {
+      font-family: $main-font;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: $primary21;
+    }
+  }
+
+  .popup_wrapper {
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    .content_wrapper {
+      @include mq(tablet) {
+        margin-top: 10px;
+      }
+      .popup_header {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+
+        h3 {
+          font-family: IBM Plex Sans;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 23px;
+          color: #000000;
+        }
+
+        .welcome_text {
+          display: block;
+
+          @include mq(tablet) {
+            display: none;
+          }
+        }
+        .sign_text {
+          display: none;
+
+          @include mq(tablet) {
+            display: block;
+          }
+        }
+
+        .signin_text {
+          display: none;
+
+          @include mq(tablet) {
+            display: block;
+            position: absolute;
+            right: 36px;
+          }
+          p {
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16.9px;
+            text-align: right;
+            color: hsl(0, 0%, 24%);
+
+            span {
+              color: $primary19;
+              font-weight: 600;
+              cursor: pointer;
+            }
+          }
+        }
+        .close_btn {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          @include box(20px);
+          cursor: pointer;
+          color: $header10;
+          position: static;
+
+          @include mq(tablet) {
+            position: absolute;
+            top: -30px;
+            right: 0;
+            color: $header1;
+            @include box(23px);
+          }
+
+          @include mq(desk-small) {
+            right: -20px;
+          }
+        }
+      }
+
+      .popup_form_login {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 320px));
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        position: relative;
+        margin: 20px auto;
+        width: 300px;
+        max-width: 320px;
+
+        @include mq(tablet) {
+          margin: 20px 0;
+        }
+
+        i {
+          position: absolute;
+          top: 92px;
+          right: 12px;
+          color: hsla(0, 0%, 54%, 1);
+          cursor: pointer;
+        }
+
+        input[type='text'],
+        input[type='password'] {
+          border: 1px solid $header17;
+          border-radius: 2px 2px 0px 0px;
+          outline: none;
+          height: 40px;
+          font-family: $main-font;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 16px;
+          color: $header11;
+          padding-left: 12px;
+        }
+
+        input[id='fname'] {
+          grid-area: 1 / 1 / 2 / 2;
+          width: 100%;
+        }
+        input[id='lname'] {
+          grid-area: 1 / 2 / 2 / 3;
+          width: 100%;
+        }
+        input[id='email'] {
+          grid-area: 2 / 1 / 3 / 3;
+          width: 100%;
+        }
+        input[id='password'] {
+          grid-area: 3 / 1 / 4 / 3;
+          width: 100%;
+        }
+        input[id='cpassword'] {
+          grid-area: 4 / 1 / 5 / 3;
+          width: 100%;
+        }
+      }
+
+      .popup_form_signin {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        position: relative;
+        margin: 20px auto;
+        width: 300px;
+        max-width: 320px;
+
+        @include mq(tablet) {
+          margin: 20px 0;
+        }
+
+        i {
+          position: absolute;
+          top: 56px;
+          right: 12px;
+          color: hsla(0, 0%, 54%, 1);
+          cursor: pointer;
+        }
+
+        input[type='text'],
+        input[type='password'] {
+          border: 1px solid $header17;
+          border-radius: 2px 2px 0px 0px;
+          outline: none;
+          height: 40px;
+          font-family: $main-font;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 16px;
+          color: $header11;
+          padding-left: 12px;
+        }
+
+        input[id='email'] {
+          grid-area: 1 / 1 / 2 / 2;
+          width: 100%;
+        }
+        input[id='password'] {
+          grid-area: 2 / 1 / 3 / 2;
+          width: 100%;
+        }
+      }
+
+      .popup_btns {
+        display: flex;
+        flex-flow: column;
+        gap: 30px;
+
+        .btn_set_1 {
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 5px;
+
+          & button {
+            @include box(150px, 36px);
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-family: $main-font;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 16px;
+            text-align: center;
+            background-color: $primary19;
+            color: $header1;
+            cursor: pointer;
+
+            @include mq(tablet) {
+              width: 100%;
+            }
+          }
+
+          div {
+            cursor: pointer;
+            font-family: $main-font;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 17px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: $header8;
+
+            @include mq(tablet) {
+              display: none;
+            }
+          }
+        }
+
+        .btn_set_2 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-flow: column;
+          gap: 12px;
+
+          & button {
+            width: 300px;
+            max-width: 320px;
+            height: 38px;
+            background-color: $header1;
+            border: 0.6px solid $header17;
+            border-radius: 2px;
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: $header15;
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+
+            i {
+              @include box(16px);
+              margin-right: 10px;
+              font-size: 15px;
+            }
+
+            .facebook_icon {
+              color: blue;
+            }
+            .google_icon {
+              color: red;
+            }
+          }
+        }
+      }
+
+      .forgot_pa {
+        font-family: $main-font;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: -0.008em;
+        margin: 22px auto 0px;
+        text-align: center;
+        @include box(240px, 16px);
+        color: $header10;
+        cursor: pointer;
+
+        @include mq(tablet) {
+          @include box(318px, 16px);
+          font-size: 12px;
+        }
+      }
+
+      .agreement {
+        margin: 22px auto 0px;
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: -0.008em;
+        color: $header10;
+        @include box(240px, 32px);
+
+        @include mq(tablet) {
+          position: absolute;
+          right: -165px;
+          width: 100%;
+          opacity: 0.6;
+          margin: 0;
+        }
+      }
+    }
+
+    .image_wrapper {
+      display: none;
+
+      @include mq(tablet) {
+        display: block;
+        margin-top: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+@import 'config';
+@import 'header';
+@import 'postmenu';
+@import 'post';
+@import 'popup';
+@import 'sidebar';
+@import 'group';
+
+html {
+  z-index: 1;
+  font-size: 12px;
+
+  @include mq(tablet-small) {
+    font-size: 14px;
+  }
+  @include mq(desk-small) {
+    font-size: 16px;
+  }
+}
+
+main {
+  position: relative;
+  .hero {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      url(../img/hero_img.png) center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include box(100%, calcRem(348px));
+    @include mq(tablet) {
+      justify-content: flex-end;
+    }
+
+    @include mq(desktop-wide) {
+      max-width: 1440px;
+    }
+  }
+
+  .action_btns {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq(tablet) {
+      display: none;
+    }
+
+    .arrow_back {
+      color: $header1;
+      margin-top: 20px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .btn_join {
+      @include box(calcRem(85px), calcRem(28px));
+      font-family: $main-font;
+      background: transparent;
+      color: $header1;
+      border: 0.8px solid #ffffff;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 18px;
+      margin-top: 14px;
+    }
+  }
+
+  .name_count {
+    display: flex;
+    flex-flow: column;
+    gap: 2px;
+    margin-left: 16px;
+    margin-bottom: 32px;
+
+    .heading {
+      font-family: $main-font;
+      color: $header1;
+      @include box(calcRem(197px), calcRem(22px));
+      font-weight: 700;
+      font-style: normal;
+      font-size: calcRem(17px);
+      line-height: 22.1px;
+    }
+
+    .followers_count {
+      @extend .heading;
+      @include box(calcRem(218px), calcRem(16px));
+      font-weight: 400;
+      font-size: calcRem(12px);
+      line-height: 15.6px;
+    }
+  }
+
+  .wrapper {
+    @include mq(tablet) {
+      margin-top: 30px;
+    }
+    @include mq(desktop) {
+      width: 1100px;
+      height: 100%;
+      margin: 32px auto;
+    }
+  }
+
+  .create_btn {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(180deg, #ff5c5c 0%, #f0568a 100%);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    box-shadow: 0px 0px 2px 0px hsla(0, 100%, 68%, 1);
+    box-shadow: 0px 2px 4px 0px hsla(340, 84%, 64%, 1);
+    cursor: pointer;
+
+    & > * {
+      @include box(24px);
+    }
+
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+
+  .wrapper_2 {
+    display: flex;
+    flex-flow: row;
+    gap: 30px;
+
+    .posts {
+      margin: 0 auto;
+    }
+
+    .sidebar {
+      display: none;
+
+      @include mq(tablet) {
+        display: block;
+        margin-right: 50px;
+        // position: fixed;
+        // top: 150px;
+        // right: 75px;
+        // z-index: 5;
+      }
+    }
+  }
+}

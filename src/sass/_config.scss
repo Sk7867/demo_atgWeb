@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+$defsize: 12px;
+@media screen and (min-width: 768px) {
+  $defsize: 14px;
+}
+@media screen and (min-width: 1000px) {
+  $defsize: 16px;
+}
+
+$main-font: 'IBM Plex Sans', sans-serif;
+
+$header1: hsla(210, 17%, 98%, 1);
+$header2: hsla(210, 17%, 95%, 1);
+$header3: hsla(210, 16%, 93%, 1);
+$header4: hsla(210, 14%, 89%, 1);
+$header5: hsla(210, 14%, 83%, 1);
+$header6: hsla(210, 14%, 83%, 1);
+$header7: hsla(210, 7%, 56%, 1);
+$header8: hsla(210, 9%, 31%, 1);
+$header9: hsla(210, 10%, 23%, 1);
+$header10: hsla(210, 11%, 15%, 1);
+$header11: hsla(0, 0%, 48%, 1);
+$header12: hsla(0, 0%, 36%, 1);
+$header13: hsla(0, 0%, 18%, 1);
+$header14: hsla(0, 0%, 95%, 1);
+$header15: hsla(0, 0%, 0%, 1);
+$header16: hsla(220, 7%, 94%, 1);
+$header17: hsla(240, 3%, 85%, 1);
+$header18: hsla(220, 9%, 94%, 1);
+
+$primary1: hsla(230, 52%, 53%, 1);
+$primary2: hsla(175, 48%, 46%, 1);
+$primary3: hsla(146, 56%, 49%, 1);
+$primary4: hsla(43, 87%, 67%, 1);
+$primary5: hsla(255, 86%, 63%, 1);
+$primary6: hsla(228, 89%, 63%, 1);
+$primary7: hsla(207, 86%, 57%, 1);
+$primary8: hsla(188, 72%, 47%, 1);
+$primary9: hsla(158, 98%, 36%, 1);
+$primary10: hsla(130, 57%, 56%, 1);
+$primary11: hsla(84, 69%, 51%, 1);
+$primary12: hsla(45, 97%, 54%, 1);
+$primary13: hsla(29, 100%, 58%, 1);
+$primary14: hsla(287, 75%, 64%, 1);
+$primary15: hsla(340, 82%, 67%, 1);
+$primary16: hsla(0, 100%, 71%, 1);
+$primary17: hsla(0, 100%, 71%, 1);
+$primary18: hsla(15, 77%, 55%, 1);
+$primary19: hsla(220, 78%, 54%, 1);
+$primary20: hsla(140, 100%, 97%, 1);
+$primary21: hsla(150, 100, 27, 1);
+
+@function calcRem($size) {
+  $remSize: $size / $defsize;
+  @return $remSize * 1rem;
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+//* Media Queries:
+$breakpoints: (
+  'phone-small': 400px,
+  'phone-wide': 480px,
+  'phablet': 560px,
+  'tablet-small': 640px,
+  'tablet': 768px,
+  'desk-small': 1024px,
+  'desktop': 1248px,
+  'desktop-wide': 1440px,
+);
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
