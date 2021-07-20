@@ -1,9 +1,9 @@
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import Header2 from './header2';
-import Posts from './posts';
+import Header2 from './Header2';
+import Posts from './Posts';
 import Sidebar from './SideBar';
 import CreateIcon from '@material-ui/icons/Create';
-import Popup from './popup';
+import Popup from './Popup';
 import { useState } from 'react';
 
 const Main = ({ join, isJoin }) => {

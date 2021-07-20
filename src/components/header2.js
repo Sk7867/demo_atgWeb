@@ -3,7 +3,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import Join from './Join_comp';
 import Leave from './Leave_comp';
 
-const header2 = ({ buttonPopup, setButtonPopup, join, isJoin }) => {
+const Header2 = ({ buttonPopup, setButtonPopup, join, isJoin }) => {
   return (
     <>
       <div className='post_menu'>
@@ -32,4 +32,4 @@ const header2 = ({ buttonPopup, setButtonPopup, join, isJoin }) => {
   );
 };
 
-export default header2;
+export default Header2;

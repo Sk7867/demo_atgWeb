@@ -1,4 +1,4 @@
-import Login from './login';
+import Login from './Login';
 import Signin from './Signin';
 
 import { motion, AnimatePresence } from 'framer-motion';

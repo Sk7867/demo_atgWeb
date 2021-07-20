@@ -1,4 +1,4 @@
-import Postmenu from './postmenu';
+import Postmenu from './Postmenu';
 
 const postmenus = [
   {

@@ -1,4 +1,4 @@
-import Post from './post';
+import Post from './Post';
 import TodayIcon from '@material-ui/icons/Today';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import Post_1 from '../img/post_1.png';

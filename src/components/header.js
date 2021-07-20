@@ -6,7 +6,7 @@ import circle from '../img/Oval.svg';
 import triangle from '../img/Path.svg';
 import User_4 from '../img/user_4.png';
 
-const header = ({ join, isJoin }) => {
+const Header = ({ join, isJoin }) => {
   return (
     <header className='header'>
       <div className='header_left'>
@@ -45,4 +45,4 @@ const header = ({ join, isJoin }) => {
   );
 };
 
-export default header;
+export default Header;
